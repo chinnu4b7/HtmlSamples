@@ -1,0 +1,54 @@
+document.addEventListener('deviceready',this.onDeviceReady, false);
+
+function onDeviceReady() {
+	//navigator.notification.alert('Loaded');
+	$('#jsonButton').on('click', function() {
+		//navigator.notification.alert('Change page');
+//		$.mobile.changePage("#secondPage",{
+//			transition: 'slide'
+//		});
+		getJsonData();
+	});
+	
+	$('#ajaxButton').on('click', function() {
+		$.ajax({
+			url: 'http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?',
+			dataType: 'json',
+			success: function() {
+				$.each(data.items, function(i, item) {
+					console.log('title = '+item.title);
+				});
+			},
+			error: error
+		});
+	});
+	
+//	$('#jsonButton').buttonMarkup({
+//		corners: false,//true
+//		icon: 'home',//delete, plus, arrow-u, arrow-d, check, gear, grid, star, custom,
+//		//arrow-r, arrow-l, minus, refresh, forward, back, alert, info, search
+//		iconpos: 'left', //right, top, bottom, notext
+//		iconshadow: false,
+//		inline: false,
+//		mini: false,
+//		shadow: false,
+//		theme: 'a'//a-z
+//	});
+	
+	$('#secondPageButton').on('click', function() {
+		window.history.back();
+	});
+}
+
+function getJsonData() {
+	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?", 
+			function(data){
+		$.each(data.items, function(i, item) {
+			console.log('link = '+item.title);
+		});
+	});
+}
+
+function showAlert() {
+	navigator.notification.alert('hiiiiiiiii');
+}

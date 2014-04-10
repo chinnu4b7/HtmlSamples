@@ -1,0 +1,12 @@
+document.addEventListener('deviceready',this.onDeviceReady, false);
+
+function onDeviceReady() {
+	navigator.notification.alert('Loaded');
+}
+
+$("a").on("click", function(event) {
+	navigator.notification.alert('Change page');
+	$.mobile.navigate("#secondpage", {
+		transition: "slideup"
+	});
+});

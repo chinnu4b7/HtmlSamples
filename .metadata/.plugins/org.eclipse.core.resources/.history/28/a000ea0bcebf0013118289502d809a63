@@ -1,0 +1,5 @@
+$('#firstPageButton').bind('click', function() {
+	$.mobile.changePage('#secondPage', {
+		transition: "slideup"
+	});
+});

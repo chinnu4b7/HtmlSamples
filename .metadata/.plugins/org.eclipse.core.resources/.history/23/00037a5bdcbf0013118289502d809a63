@@ -1,0 +1,15 @@
+document.addEventListener('deviceready',this.onDeviceReady, false);
+
+function onDeviceReady() {
+	//navigator.notification.alert('Loaded');
+	$('a').on('click', function() {
+		//navigator.notification.alert('Change page');
+		$.mobile.navigate("#secondpae", {
+			transition: "slideup"
+		});
+	});
+}
+
+function showAlert() {
+	navigator.notification.alert('hiiiiiiiii');
+}

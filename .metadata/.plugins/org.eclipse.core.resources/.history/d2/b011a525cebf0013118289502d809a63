@@ -1,0 +1,6 @@
+$('a #firstPageButton').bind('click', function() {
+	navigator.notification.alert('Change page');
+	$.mobile.changePage('#secondPage', {
+		transition: "slideup"
+	});
+});

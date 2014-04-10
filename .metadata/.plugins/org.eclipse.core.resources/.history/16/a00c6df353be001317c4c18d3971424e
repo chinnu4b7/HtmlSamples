@@ -1,0 +1,16 @@
+package com.example.hellophonegap;
+
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.DroidGap;
+
+import android.os.Bundle;
+
+public class MainActivity extends DroidGap{
+
+	CordovaWebView cwv;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}

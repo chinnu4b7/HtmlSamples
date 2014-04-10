@@ -1,0 +1,35 @@
+document.addEventListener('deviceready',this.onDeviceReady, false);
+
+function onDeviceReady() {
+	//navigator.notification.alert('Loaded');
+	$('#first').on('click', function() {
+		//navigator.notification.alert('Change page');
+//		$.mobile.changePage("#secondPage",{
+//			transition: 'slide'
+//		});
+		
+		$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?', function(data){
+			
+		});
+	});
+	
+	$('#first').buttonMarkup({
+		corners: false,//true
+		icon: 'home',//delete, plus, arrow-u, arrow-d, check, gear, grid, star, custom,
+		//arrow-r, arrow-l, minus, refresh, forward, back, alert, info, search
+		iconpos: 'left', //right, top, bottom, notext
+		iconshadow: false,
+		inline: false,
+		mini: false,
+		shadow: false,
+		theme: 'a'//a-z
+	});
+	
+	$('#secondPageButton').on('click', function() {
+		window.history.back();
+	});
+}
+
+function showAlert() {
+	navigator.notification.alert('hiiiiiiiii');
+}

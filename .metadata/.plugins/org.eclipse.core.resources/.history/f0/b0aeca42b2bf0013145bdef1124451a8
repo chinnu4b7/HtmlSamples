@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+<title>Hello World</title>
+</head>
+<body>
+	<!--         <div class="app"> -->
+	<!--             <h1>Apache Cordova</h1> -->
+	<!--             <div id="deviceready" class="blink"> -->
+	<!--                 <p class="event listening">Connecting to Device</p> -->
+	<!--                 <p class="event received">Device is Ready</p> -->
+	<!--             </div> -->
+	<!--         </div> -->
+	<div data-role="page">
+		<div data-role="header">
+			<h1>Header</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-insert="true" data-filter="true" id="list">
+				<li><a href="#">Ahdjkfd</a></li>
+				<li><a href="#">Ahdjkfd</a></li>
+				<li><a href="#">Ahdjkfd</a></li>
+				<li><a href="#">Ahdjkfd</a></li>
+				<li><a href="#">Ahdjkfd</a></li>
+				<li><a href="#">Ahdjkfd</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h4>Footer</h4>
+		</div>
+	</div>
+	<script type="text/javascript" src="cordova-2.3.0.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script
+		src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		//             app.initialize();
+		//             window.Android.sayHello();
+		$('#list li').on('click',function(){
+			navigator.notification.alert('#list '+$('li').find('option: selected').text());
+		});
+	</script>
+</body>
+</html>
